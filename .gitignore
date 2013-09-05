@@ -1,0 +1,4 @@
+## NODE IGNORES ##
+node_modules/
+*.DS_STORE
+scaffolding/dump.rdb
