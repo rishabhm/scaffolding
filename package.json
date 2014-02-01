@@ -1,14 +1,17 @@
 {
-	"name": "test-app",
-	"description" : "trying to learn how to setup a basic node mvc",
+	"name": "changingControls",
+	"description" : "trying to override the controls of an open-source game",
 	"version" : "0.0.1",
 	"scripts" : {
 		"start" : "node app.js"
 	},
 	"devDependencies" : {
 		"express" 	: "3.x",
-		"redis"		: "*",
-		"mongoose"	: "*",
-		"jade" 		: "*"
+		"socket.io" : "*",
+		"session.socket.io" : "*",
+		"node-static" : "*",
+		"mongoose" : "*",
+		"connect-redis" : "*",
+		"redis" : "*"
 	}
 }

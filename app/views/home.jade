@@ -1,1 +1,25 @@
-| Hello #{name} #{age}
+include header
+body
+	.header_bar#page_top
+		img(src="../../resources/a215_logo.png")
+	.navigation_bar_top
+		a.nav_item(target-content=".teams", href="#team") TEAM
+		a.nav_item(target-content=".projects", href="#projects") PROJECTS
+		a.nav_item(target-content=".contact", href="#contact") CONTACT US
+	.content_item.teams(id="team")
+		.heading TEAM
+		include team
+		
+	.content_item.projects(id="projects")
+		.heading PROJECTS
+		include projects
+		
+	.content_item.contact(id="contact")
+		.heading CONTACT US
+		include contact_us
+
+	.footer.hidden
+		a.footer_item.border_r(href="#page_top") scroll_to_top
+		a.footer_item.border_r(target-content=".teams", href="#team") TEAM
+		a.footer_item.border_r(target-content=".projects", href="#projects") PROJECTS
+		a.footer_item(target-content=".contact", href="#contact") CONTACT&nbsp;US
