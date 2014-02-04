@@ -1,3 +1,7 @@
+@font-face {
+	font-family: cursiveQuote;
+	src : url('/resources/carlbeckscript.ttf');
+}
 @media all and (min-width: 1000px) {
 	body {
 		font-family: 'Open Sans', sans-serif;
@@ -45,10 +49,12 @@
 	}
 
 	.content_item {
-		position: absolute;
+		position: relative;
 		width: 80%;
 		margin: 0 auto;
 		margin-left: 10%;
+		margin-bottom: 15px;
+		min-height: 250px;
 	}
 
 	.content_item .heading {
@@ -58,6 +64,9 @@
 		font-size: 25pt;
 		letter-spacing: 2;
 	}
+
+	.top_content_item {
+	} 
 
 	a {
 		text-decoration: none;
@@ -90,6 +99,129 @@
 		opacity: 0;
 	}
 
+	.content_item .body {
+		margin: 15px 0;
+		font-size: 14pt;
+		padding-bottom: 50px;
+	}
+
+	.quote {
+		font-size: 15pt;
+		text-align: center;
+		width: 90%;
+		margin: 0 auto;
+		font-family: cursiveQuote;
+		letter-spacing: 1.2;
+		color: #333;
+	}
+
+	.photos {
+		display: inline-block;
+		width: 25%;
+	}
+
+	.photos img {
+		width: 100%;
+		height: inherit;
+	}
+
+	.member_desc {
+		width: 23%;
+		padding-right: 2%;
+		position :absolute;
+		margin-top: -75px;
+		/*height: 24%;*/
+		text-align: right; 
+		background-color: rgba(255,255,255,0.7);
+		opacity: 0;
+		transition: opacity 0.5s;
+	}
+
+	.photos:hover .member_desc{
+		/*background-color: rgba(255,255,255,0.7);*/
+		opacity: 1;
+	}
+
+	.text {
+		width: 70%;
+		font-size: 15pt;
+		color : #444;
+		display: inline-block;
+		margin-left: 5%;
+		/*height: 100px;*/
+	}
+
+	.about_us_logo {
+		width: 20%;
+		height: inherit;
+		display: inline-block;
+		text-align: right;
+		/*vertical-align: middle;*/
+	}
+
+	.about_us_logo img {
+		/*margin-top: 5%;*/
+		width: 70%;
+		min-width: 150px;
+		height: inherit;
+	}
+
+	.pillars {
+		width: 100%;
+		margin-top: 15px;
+	}
+
+	.pillar {
+		width: 24.25%;
+		display: table-cell;
+		/*margin: 5px 5px;*/
+		margin-top: 5px;
+		height: auto%;
+		vertical-align: top;
+		text-align: left;
+		overflow-y: hidden;
+		/*border-right: 10px solid #fff;*/
+	}
+
+	.pillar .heading {
+		text-align: right;
+		color: rgba(255,255,255,0.9);
+		padding: 10px;
+	}
+
+	.pillar .content {
+		padding: 5%;
+		color: #555;
+		/*height: 100%;*/
+		font-size: 1em;
+	}
+
+	.pillar.creativity {
+		background-color: rgba(1,162,166, 0.5);
+		background-color: rgba(0,64,166, 0.3);
+		/*background-color: rgba(57,105,166, 0.5);*/
+	}
+
+	.pillar.engineering {
+		background-color: rgba(41,217,194,0.6);
+	}
+
+	.pillar.design {
+		background-color: rgba(189,242,113,0.8);
+	}
+
+	.pillar.service {
+		background-color: rgba(255,255,166,1);
+	}
+
+	.pillar.ml {
+		border-left: 0.3em solid #fff;
+	}
+
+	.pillar.mr {
+		border-right: 0.3em solid #fff;
+	}
+	
 }
 
 @media all and (max-width: 1000px) {

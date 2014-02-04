@@ -5,21 +5,24 @@ body
 	.navigation_bar_top
 		a.nav_item(target-content=".teams", href="#team") TEAM
 		a.nav_item(target-content=".projects", href="#projects") PROJECTS
-		a.nav_item(target-content=".contact", href="#contact") CONTACT US
+		a.nav_item(target-content=".about", href="#about") ABOUT US
 	.content_item.teams(id="team")
 		.heading TEAM
-		include team
+		.body
+			include team
 		
 	.content_item.projects(id="projects")
 		.heading PROJECTS
-		include projects
+		.body
+			include projects
 		
-	.content_item.contact(id="contact")
-		.heading CONTACT US
-		include contact_us
+	.content_item.about(id="about")
+		.heading ABOUT US
+		.body
+			include about_us
 
 	.footer.hidden
 		a.footer_item.border_r(href="#page_top") scroll_to_top
 		a.footer_item.border_r(target-content=".teams", href="#team") TEAM
 		a.footer_item.border_r(target-content=".projects", href="#projects") PROJECTS
-		a.footer_item(target-content=".contact", href="#contact") CONTACT&nbsp;US
+		a.footer_item(target-content=".about", href="#about") ABOUT&nbsp;US

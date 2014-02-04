@@ -4,7 +4,7 @@ var socket = io.connect('/')
 $(document).ready(function () {
 
 	positionContent()
-
+	console.log($(window).scrollTop()/$())
 	$(function() {
 	  $('a[href*=#]:not([href=#])').click(function() {
 	    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
@@ -21,8 +21,7 @@ $(document).ready(function () {
 	});
 
 	$(document).scroll(function() {
-		var scroll_ratio = $(window).scrollTop()/$(window).height()
-		if (scroll_ratio > 1) {
+		if ($(window).scrollTop() > $('.navigation_bar_top').offset()['top']) {
 			$('.footer').removeClass('hidden')
 		} else {
 			$('.footer').addClass('hidden')
@@ -33,13 +32,17 @@ $(document).ready(function () {
 		positionContent()
 	})
 
+	// $('.photos').on('mouseover', function (e) {
+	// 	var curr_div = $(e.currentTarget),
+	// 		desc_div = curr_div
+	// })
+
 })
 
 function positionContent () {
-	var vph = $(window).height(),
-		req_mtop = vph+45
-	$('.content_item').each(function (ind) {
-		$(this).css('top', (req_mtop * (ind+1)).toString())
-	})
+	var nav_bar = $('.navigation_bar_top'),
+		vph = nav_bar.offset()['top'] + nav_bar.height(),
+		req_mtop = window.innerHeight - vph
+	$('.navigation_bar_top').css('margin-bottom', req_mtop.toString())
 }
 
