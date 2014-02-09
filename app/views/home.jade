@@ -1,28 +1,3 @@
 include header
 body
-	.header_bar#page_top
-		img(src="../../resources/a215_logo.png")
-	.navigation_bar_top
-		a.nav_item(target-content=".teams", href="#team") TEAM
-		a.nav_item(target-content=".projects", href="#projects") PROJECTS
-		a.nav_item(target-content=".about", href="#about") ABOUT US
-	.content_item.teams(id="team")
-		.heading TEAM
-		.body
-			include team
-		
-	.content_item.projects(id="projects")
-		.heading PROJECTS
-		.body
-			include projects
-		
-	.content_item.about(id="about")
-		.heading ABOUT US
-		.body
-			include about_us
-
-	.footer.hidden
-		a.footer_item.border_r(href="#page_top") scroll_to_top
-		a.footer_item.border_r(target-content=".teams", href="#team") TEAM
-		a.footer_item.border_r(target-content=".projects", href="#projects") PROJECTS
-		a.footer_item(target-content=".about", href="#about") ABOUT&nbsp;US
+	| Congratulations! The scaffolding is ready for you to take off!

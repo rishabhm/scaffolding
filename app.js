@@ -20,7 +20,7 @@ var RedisStore = require('connect-redis')(express),
     rClient = redis.createClient(),
     sessionStore = new RedisStore({client : rClient});
 
-var cookieParser = express.cookieParser('a215_website');
+var cookieParser = express.cookieParser('insert_key');
 
 app.configure(function() {
     app.set('views', config.root + '/app/views');
@@ -28,7 +28,7 @@ app.configure(function() {
     app.use(express.bodyParser());
     app.use(express.methodOverride());
     app.use(cookieParser);
-    app.use(express.session({store:sessionStore, key:'a215_sessionid', secret:'a215_website'}));
+    app.use(express.session({store:sessionStore, key:'insert_session_id', secret:'insert_key'}));
     app.use(express.static(path.resolve('./public')));
     app.use(app.router);
 });
@@ -36,9 +36,9 @@ app.configure(function() {
 io.set('log level', 1)
 
 var SessionSockets = require('session.socket.io'),
-    sessionSockets = new SessionSockets(io, sessionStore, cookieParser, 'a215_sessionid');
+    sessionSockets = new SessionSockets(io, sessionStore, cookieParser, 'insert_session_id');
 
-server.listen(3000);
-console.log('Listening to port 3000...');
+server.listen(port);
+console.log('Listening to port '+port.toString()+'...');
 
 require('./config/routes')(app, io, sessionSockets);

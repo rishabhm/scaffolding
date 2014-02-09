@@ -6,12 +6,13 @@
 		"start" : "node app.js"
 	},
 	"devDependencies" : {
-		"express" 	: "3.x",
-		"socket.io" : "*",
-		"session.socket.io" : "*",
-		"node-static" : "*",
-		"mongoose" : "*",
 		"connect-redis" : "*",
+		"express" 	: "3.x",
+		"jade"		: "*",
+		"mongoose" : "*",
+		"node-static" : "*",
+		"session.socket.io" : "*",
+		"socket.io" : "*",
 		"redis" : "*"
 	}
 }
