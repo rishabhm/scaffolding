@@ -5,7 +5,6 @@ var	express 	= require('express'),
 	server 		= http.createServer(app),
 	io          = require('socket.io').listen(server, {log : false}),
 	path 		= require('path'),
-	redis       = require('redis'),
 	fs 			= require('fs'),
 	config  	= require('./config/config')['dev_mode'],
 	port 		= 3000;
@@ -16,9 +15,8 @@ fs.readdirSync(models_path).forEach(function (file) {
 	require(models_path+'/'+file)
 })
 
-var RedisStore = require('connect-redis')(express),
-    rClient = redis.createClient(),
-    sessionStore = new RedisStore({client : rClient});
+var MemoryStore = express.session.MemoryStore
+sessionStore = new MemoryStore()
 
 var cookieParser = express.cookieParser('insert_key');
 
